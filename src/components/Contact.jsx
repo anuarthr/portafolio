@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import { FiGithub, FiLinkedin, FiMail, FiSend, FiInstagram } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail, FiSend, FiInstagram, FiLoader } from 'react-icons/fi'
 import Reveal from './Reveal'
 import SectionTitle from './SectionTitle'
 import { site } from '../data/site'
 import { useLang } from '../context/LangContext'
 import { t } from '../i18n/translations'
+
+const FORMSPREE_URL = 'https://formspree.io/f/mbdedlnr'
 
 const socials = [
   { icon: FiGithub, href: site.github, label: 'GitHub', color: 'hover:text-white' },
@@ -17,16 +19,28 @@ export default function Contact() {
   const { lang } = useLang()
   const tr = t[lang].contact
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | loading | sent | error
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Contacto de ${form.name}`)
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`)
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`
-    setSent(true)
+    setStatus('loading')
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name: form.name, email: form.email, message: form.message }),
+      })
+      if (res.ok) {
+        setStatus('sent')
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -44,7 +58,8 @@ export default function Contact() {
                   required
                   value={form.name}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-accent-light"
+                  disabled={status === 'loading' || status === 'sent'}
+                  className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-accent-light disabled:opacity-50"
                   placeholder={tr.namePh}
                 />
               </div>
@@ -56,7 +71,8 @@ export default function Contact() {
                   required
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-accent-light"
+                  disabled={status === 'loading' || status === 'sent'}
+                  className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-accent-light disabled:opacity-50"
                   placeholder={tr.emailPh}
                 />
               </div>
@@ -69,16 +85,34 @@ export default function Contact() {
                 rows={5}
                 value={form.message}
                 onChange={handleChange}
-                className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-accent-light"
+                disabled={status === 'loading' || status === 'sent'}
+                className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-slate-500 focus:border-accent-light disabled:opacity-50"
                 placeholder={tr.messagePh}
               />
             </div>
+
+            {status === 'error' && (
+              <p className="text-center text-sm text-red-400">{tr.error}</p>
+            )}
+
             <button
               type="submit"
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-light hover:shadow-accent/40"
+              disabled={status === 'loading' || status === 'sent'}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-light hover:shadow-accent/40 disabled:cursor-not-allowed disabled:opacity-70"
             >
-              <FiSend />
-              {sent ? tr.sent : tr.send}
+              {status === 'loading' ? (
+                <>
+                  <FiLoader className="animate-spin" />
+                  {tr.sending}
+                </>
+              ) : status === 'sent' ? (
+                tr.sent
+              ) : (
+                <>
+                  <FiSend />
+                  {tr.send}
+                </>
+              )}
             </button>
           </form>
         </Reveal>
