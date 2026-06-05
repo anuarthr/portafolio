@@ -1,0 +1,121 @@
+export const t = {
+  es: {
+    nav: {
+      about: 'Sobre mí',
+      experience: 'Experiencia',
+      projects: 'Proyectos',
+      skills: 'Skills',
+      contact: 'Contacto',
+      downloadCV: 'Descargar CV',
+    },
+    hero: {
+      greeting: 'Hola, soy',
+      badge: 'Disponible para prácticas',
+      viewProjects: 'Ver proyectos',
+      contactMe: 'Contactarme',
+      stack: 'Stack',
+    },
+    about: {
+      kicker: 'Sobre mí',
+      title: 'Quién soy',
+      secondary:
+        'Me interesa especialmente construir sistemas que escalen y que estén bien pensados desde el diseño. Aprendo rápido, me importa la calidad del código y disfruto trabajar en equipo con criterio técnico. Actualmente en proceso de prácticas profesionales.',
+      seeking: 'Buscando prácticas para aportar y crecer 🚀',
+    },
+    experience: {
+      kicker: 'Trayectoria',
+      title: 'Experiencia',
+    },
+    projects: {
+      kicker: 'Portafolio',
+      title: 'Proyectos',
+      academicTitle: 'Académicos & Colaborativos',
+      featured: 'Destacado',
+      backend: 'Backend',
+      frontend: 'Frontend',
+      viewCode: 'Ver código',
+      viewDemo: 'Ver demo',
+    },
+    skills: {
+      kicker: 'Stack',
+      title: 'Skills & Tecnologías',
+      categories: {
+        'Base de datos': 'Base de datos',
+        Seguridad: 'Seguridad',
+      },
+    },
+    contact: {
+      kicker: 'Contacto',
+      title: '¿Tienes una oportunidad? Hablemos.',
+      name: 'Nombre',
+      email: 'Email',
+      message: 'Mensaje',
+      namePh: 'Tu nombre',
+      emailPh: 'tu@email.com',
+      messagePh: 'Cuéntame sobre la oportunidad...',
+      send: 'Enviar',
+      sent: '¡Gracias! Abriendo tu correo...',
+    },
+    footer: { made: 'Desarrollado por' },
+  },
+
+  en: {
+    nav: {
+      about: 'About',
+      experience: 'Experience',
+      projects: 'Projects',
+      skills: 'Skills',
+      contact: 'Contact',
+      downloadCV: 'Download CV',
+    },
+    hero: {
+      greeting: 'Hi, I\'m',
+      badge: 'Available for internships',
+      viewProjects: 'View projects',
+      contactMe: 'Contact me',
+      stack: 'Stack',
+    },
+    about: {
+      kicker: 'About me',
+      title: 'Who I am',
+      secondary:
+        'I am especially interested in building systems that scale and are well-thought-out from the design stage. I learn quickly, code quality matters to me, and I enjoy working in a team with technical judgment. Currently completing my professional internship.',
+      seeking: 'Looking for an internship to contribute and grow 🚀',
+    },
+    experience: {
+      kicker: 'Career',
+      title: 'Experience',
+    },
+    projects: {
+      kicker: 'Portfolio',
+      title: 'Projects',
+      academicTitle: 'Academic & Collaborative',
+      featured: 'Featured',
+      backend: 'Backend',
+      frontend: 'Frontend',
+      viewCode: 'View code',
+      viewDemo: 'Live demo',
+    },
+    skills: {
+      kicker: 'Stack',
+      title: 'Skills & Technologies',
+      categories: {
+        'Base de datos': 'Databases',
+        Seguridad: 'Security',
+      },
+    },
+    contact: {
+      kicker: 'Contact',
+      title: 'Have an opportunity? Let\'s talk.',
+      name: 'Name',
+      email: 'Email',
+      message: 'Message',
+      namePh: 'Your name',
+      emailPh: 'your@email.com',
+      messagePh: 'Tell me about the opportunity...',
+      send: 'Send',
+      sent: 'Thanks! Opening your email client...',
+    },
+    footer: { made: 'Developed by' },
+  },
+}

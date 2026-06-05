@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Local env files
+*.local
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+
+# Claude Code internals
+CLAUDE.md
+.claude/
+
+# Archivos de trabajo internos
+github-profile-README.md
+.env.example
+
+# CVs — solo subir los nombrados correctamente en public/
+public/cv.pdf
+"public/ANUARTH ALONSO RINCÓN GONZÁLEZ_ES_CV (3).pdf"

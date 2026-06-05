@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-base text-slate-300 font-sans antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-display text-white;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-white;
+  }
+}
+
+@layer components {
+  /* Sin backdrop-blur: innecesario en fondo oscuro y es el principal causante de jank */
+  .glass {
+    @apply bg-white/[0.06] border border-white/10;
+  }
+
+  /* Solo el navbar necesita blur (elemento pequeño y fijo) */
+  .glass-nav {
+    @apply bg-black/60 backdrop-blur-md border-b border-white/10;
+  }
+
+  .section-pad {
+    @apply max-w-6xl mx-auto px-6 py-24;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10
+      bg-white/[0.04] px-3 py-1 text-xs font-medium text-slate-300;
+  }
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
