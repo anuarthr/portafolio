@@ -4,7 +4,7 @@ export const site = {
   stats: { projects: '5+', technologies: '20+', production: '2' },
   email: 'anuarthrincongonzalez@gmail.com',
   github: 'https://github.com/anuarthr',
-  linkedin: 'https://www.linkedin.com/in/anuarth-alonso-rincon-gonzalez-03227b248/',
+  linkedin: 'https://www.linkedin.com/in/anuarthrincong/',
   instagram: 'https://www.instagram.com/anuarthrincon9/',
   cv: '/cv.pdf',
 
