@@ -1,4 +1,4 @@
-import { FiGithub, FiLinkedin, FiMail, FiInstagram } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 import { site } from '../data/site'
 import { useLang } from '../context/LangContext'
 import { t } from '../i18n/translations'
@@ -6,7 +6,6 @@ import { t } from '../i18n/translations'
 const socials = [
   { icon: FiGithub, href: site.github, label: 'GitHub' },
   { icon: FiLinkedin, href: site.linkedin, label: 'LinkedIn' },
-  { icon: FiInstagram, href: site.instagram, label: 'Instagram' },
   { icon: FiMail, href: `mailto:${site.email}`, label: 'Email' },
 ]
 

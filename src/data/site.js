@@ -8,7 +8,6 @@ export const site = {
   email: 'anuarthrincongonzalez@gmail.com',
   github: 'https://github.com/anuarthr',
   linkedin: 'https://www.linkedin.com/in/anuarthrincong/',
-  instagram: 'https://www.instagram.com/anuarthrincon9/',
   cv: '/cv.pdf',
 
   es: {
