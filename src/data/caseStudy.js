@@ -16,14 +16,18 @@ export const caseStudy = {
       before: 'Antes',
       after: 'Después',
       mobile: 'App móvil',
-      legacyA: 'App Next.js 1',
-      legacyB: 'App Next.js 2',
+      legacyWeb: 'Web (Next.js)',
+      legacyPanel: 'Panel de entidades (Next.js)',
       legacyNote: 'Lógica repartida entre dos aplicaciones',
+      web: 'Web',
+      panel: 'Panel de entidades',
       unchanged: '43 endpoints sin cambios',
       service: 'Servicio NestJS',
       serviceNote: 'Un solo servicio, con pruebas y CI',
       database: 'PostgreSQL',
       caption: 'Esquema simplificado de la arquitectura antes y después de la migración.',
+      description:
+        'Antes: la app móvil usaba solo la web; la web y el panel de entidades, las dos en Next.js, accedían a PostgreSQL. Después: la app móvil, la web y el panel de entidades usan un único servicio NestJS que accede a PostgreSQL, y la app sigue usando los mismos 43 endpoints.',
     },
     blocks: [
       {
@@ -59,14 +63,18 @@ export const caseStudy = {
       before: 'Before',
       after: 'After',
       mobile: 'Mobile app',
-      legacyA: 'Next.js app 1',
-      legacyB: 'Next.js app 2',
+      legacyWeb: 'Web app (Next.js)',
+      legacyPanel: 'Entity panel (Next.js)',
       legacyNote: 'Logic split across two apps',
+      web: 'Web app',
+      panel: 'Entity panel',
       unchanged: '43 endpoints unchanged',
       service: 'NestJS service',
       serviceNote: 'A single service, with tests and CI',
       database: 'PostgreSQL',
       caption: 'Simplified architecture before and after the migration.',
+      description:
+        'Before: the mobile app used only the web app; the web app and the entity panel, both built with Next.js, accessed PostgreSQL. After: the mobile app, the web app and the entity panel use a single NestJS service that accesses PostgreSQL, and the mobile app still uses the same 43 endpoints.',
     },
     blocks: [
       {

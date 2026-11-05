@@ -6,34 +6,46 @@ import { useLang } from '../context/LangContext'
 
 const blockIcons = [FiLayers, FiGitMerge, FiCheckCircle]
 
-function Node({ children, accent = false }) {
+function Node({ children, accent = false, className = '' }) {
   return (
     <div
-      className={`rounded-xl border px-4 py-3 text-center text-sm font-medium ${
+      className={`flex items-center justify-center rounded-xl border px-2 py-2.5 text-center text-xs font-medium leading-snug sm:text-sm lg:px-3 lg:py-3 ${
         accent
           ? 'border-accent/60 bg-accent/15 text-white shadow-lg shadow-accent/10'
           : 'border-white/10 bg-white/[0.04] text-slate-200'
-      }`}
+      } ${className}`}
     >
       {children}
     </div>
   )
 }
 
-function Arrow({ label }) {
+// Flecha hacia abajo, con una etiqueta opcional debajo.
+function Down({ label }) {
   return (
-    <div className="grid min-h-10 grid-cols-[1fr_auto_1fr] items-center gap-3 py-2">
-      <span />
-      <FiArrowDown aria-hidden="true" className="text-lg text-slate-500" />
-      {label ? (
-        <span className="chip justify-self-start border-accent/40 text-[11px] leading-tight text-accent-light">
+    <div className="flex flex-col items-center gap-1 py-2">
+      <FiArrowDown className="text-lg text-slate-500" />
+      {label && (
+        <span className="rounded-full border border-accent/40 bg-white/[0.04] px-2 py-0.5 text-center text-[10px] font-medium leading-tight text-accent-light sm:text-[11px]">
           {label}
         </span>
-      ) : (
-        <span />
       )}
     </div>
   )
+}
+
+// Fila de flechas alineada con la fila de nodos de arriba. null deja la celda vacía.
+// 'tall' iguala la altura de las dos columnas cuando se ven lado a lado (md en adelante).
+function Arrows({ cols, cells, tall = false }) {
+  return (
+    <div className={`grid items-start gap-2 sm:gap-3 ${cols} ${tall ? 'md:min-h-[4.25rem]' : ''}`}>
+      {cells.map((c, i) => (c === null ? <span key={i} /> : <Down key={i} label={c || undefined} />))}
+    </div>
+  )
+}
+
+function Note({ children }) {
+  return <p className="mt-2 text-center text-xs text-slate-500">{children}</p>
 }
 
 function Column({ heading, children }) {
@@ -50,29 +62,41 @@ function Column({ heading, children }) {
 function Diagram({ d }) {
   return (
     <figure className="glass rounded-2xl p-6 sm:p-8">
-      <div className="grid gap-10 md:grid-cols-2 md:gap-12">
+      {/* El esquema es visual; su equivalente en texto está en el figcaption. */}
+      <div aria-hidden="true" className="grid gap-10 md:grid-cols-2 md:gap-12">
         <Column heading={d.before}>
-          <Node>{d.mobile}</Node>
-          <Arrow />
-          <div className="grid grid-cols-2 gap-3">
-            <Node>{d.legacyA}</Node>
-            <Node>{d.legacyB}</Node>
+          {/* La app móvil solo usaba la web; el panel de entidades era una aplicación aparte. */}
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
+            <Node className="h-full">{d.mobile}</Node>
+            <span />
           </div>
-          <p className="mt-2 text-center text-xs text-slate-500">{d.legacyNote}</p>
-          <Arrow />
+          <Arrows cols="grid-cols-2" cells={['', null]} tall />
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
+            <Node className="h-full">{d.legacyWeb}</Node>
+            <Node className="h-full">{d.legacyPanel}</Node>
+          </div>
+          <Note>{d.legacyNote}</Note>
+          <Arrows cols="grid-cols-2" cells={['', '']} />
           <Node>{d.database}</Node>
         </Column>
 
         <Column heading={d.after}>
-          <Node>{d.mobile}</Node>
-          <Arrow label={d.unchanged} />
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            <Node className="h-full">{d.mobile}</Node>
+            <Node className="h-full">{d.web}</Node>
+            <Node className="h-full">{d.panel}</Node>
+          </div>
+          <Arrows cols="grid-cols-3" cells={[d.unchanged, '', '']} tall />
           <Node accent>{d.service}</Node>
-          <p className="mt-2 text-center text-xs text-slate-500">{d.serviceNote}</p>
-          <Arrow />
+          <Note>{d.serviceNote}</Note>
+          <Arrows cols="grid-cols-1" cells={['']} />
           <Node>{d.database}</Node>
         </Column>
       </div>
-      <figcaption className="mt-6 text-center text-xs text-slate-500">{d.caption}</figcaption>
+      <figcaption className="mt-6 text-center text-xs text-slate-500">
+        {d.caption}
+        <span className="sr-only"> {d.description}</span>
+      </figcaption>
     </figure>
   )
 }
