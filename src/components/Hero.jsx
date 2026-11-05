@@ -109,8 +109,12 @@ export default function Hero() {
             />
             <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-base sm:h-72 sm:w-72">
               <img
-                src="/Fotoperfilpp.PNG"
-                alt={site.name}
+                src="/foto-perfil-576.webp"
+                alt={tr.photoAlt}
+                width={576}
+                height={576}
+                fetchpriority="high"
+                decoding="async"
                 className="h-full w-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'

@@ -14,6 +14,7 @@ export const t = {
       viewProjects: 'Ver proyectos',
       contactMe: 'Contactarme',
       stack: 'Stack',
+      photoAlt: 'Foto de perfil de Anuarth Rincón',
     },
     about: {
       kicker: 'Sobre mí',
@@ -41,6 +42,12 @@ export const t = {
       frontend: 'Frontend',
       viewCode: 'Ver código',
       viewDemo: 'Ver demo',
+      enlarge: 'ampliar',
+      enlargeLabel: 'Ampliar imagen',
+      close: 'Cerrar',
+      prev: 'Anterior',
+      next: 'Siguiente',
+      shot: 'Captura',
     },
     skills: {
       kicker: 'Stack',
@@ -78,6 +85,7 @@ export const t = {
       viewProjects: 'View projects',
       contactMe: 'Contact me',
       stack: 'Stack',
+      photoAlt: 'Profile photo of Anuarth Rincón',
     },
     about: {
       kicker: 'About me',
@@ -105,6 +113,12 @@ export const t = {
       frontend: 'Frontend',
       viewCode: 'View code',
       viewDemo: 'Live demo',
+      enlarge: 'enlarge',
+      enlargeLabel: 'Enlarge image',
+      close: 'Close',
+      prev: 'Previous',
+      next: 'Next',
+      shot: 'Screenshot',
     },
     skills: {
       kicker: 'Stack',

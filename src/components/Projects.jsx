@@ -7,7 +7,12 @@ import { projects } from '../data/projects'
 import { useLang } from '../context/LangContext'
 import { t } from '../i18n/translations'
 
-function Lightbox({ images, startIdx, onClose }) {
+// Cada imagen se sirve en dos anchos: src-640.webp (tarjeta) y src-1280.webp (pantallas x2 y visor).
+const small = (src) => `${src}-640.webp`
+const large = (src) => `${src}-1280.webp`
+const altOf = (img, lang) => (lang === 'en' ? img.alt_en : img.alt)
+
+function Lightbox({ images, startIdx, onClose, tr, lang }) {
   const [idx, setIdx] = useState(startIdx)
 
   const prev = useCallback(() => setIdx((i) => (i - 1 + images.length) % images.length), [images.length])
@@ -35,7 +40,7 @@ function Lightbox({ images, startIdx, onClose }) {
       <button
         onClick={onClose}
         className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25"
-        aria-label="Cerrar"
+        aria-label={tr.close}
       >
         <FiX size={20} />
       </button>
@@ -47,8 +52,9 @@ function Lightbox({ images, startIdx, onClose }) {
       )}
 
       <img
-        src={images[idx]}
-        alt={`Captura ${idx + 1}`}
+        src={large(images[idx].src)}
+        alt={altOf(images[idx], lang)}
+        decoding="async"
         className="max-h-[90vh] max-w-[90vw] rounded-xl object-contain shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       />
@@ -58,14 +64,14 @@ function Lightbox({ images, startIdx, onClose }) {
           <button
             onClick={(e) => { e.stopPropagation(); prev() }}
             className="absolute left-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25"
-            aria-label="Anterior"
+            aria-label={tr.prev}
           >
             <FiChevronLeft size={22} />
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); next() }}
             className="absolute right-4 top-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/25"
-            aria-label="Siguiente"
+            aria-label={tr.next}
           >
             <FiChevronRight size={22} />
           </button>
@@ -75,7 +81,7 @@ function Lightbox({ images, startIdx, onClose }) {
                 key={i}
                 onClick={(e) => { e.stopPropagation(); setIdx(i) }}
                 className={`h-2 rounded-full transition-all ${i === idx ? 'w-6 bg-white' : 'w-2 bg-white/35'}`}
-                aria-label={`Captura ${i + 1}`}
+                aria-label={`${tr.shot} ${i + 1}`}
               />
             ))}
           </div>
@@ -86,8 +92,9 @@ function Lightbox({ images, startIdx, onClose }) {
   )
 }
 
-function ProjectImage({ project }) {
-  const images = project.images?.length ? project.images : project.image ? [project.image] : []
+function ProjectImage({ project, tr }) {
+  const { lang } = useLang()
+  const images = project.images ?? []
   const [idx, setIdx] = useState(0)
   const [lightbox, setLightbox] = useState(null)
 
@@ -103,33 +110,39 @@ function ProjectImage({ project }) {
     )
   }
 
+  const img = images[idx]
+
   return (
     <>
       <div className="group/img relative h-full w-full">
         <img
-          src={images[idx]}
-          alt={`${project.title} – ${idx + 1}`}
+          src={small(img.src)}
+          srcSet={`${small(img.src)} 640w, ${large(img.src)} 1280w`}
+          sizes="(min-width: 768px) 540px, calc(100vw - 48px)"
+          alt={altOf(img, lang)}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full cursor-zoom-in object-cover transition-transform duration-500 group-hover:scale-105"
           onClick={openLightbox}
         />
         <button
           onClick={openLightbox}
           className="absolute left-2 top-2 flex items-center gap-1 rounded-full bg-black/60 px-2.5 py-1 text-xs text-white/80 opacity-0 transition-opacity group-hover/img:opacity-100 hover:bg-black/80"
-          aria-label="Ampliar imagen"
+          aria-label={tr.enlargeLabel}
         >
-          <FiMaximize2 size={11} /> ampliar
+          <FiMaximize2 size={11} /> {tr.enlarge}
         </button>
         {images.length > 1 && (
           <>
-            <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-1.5 text-white opacity-0 transition-opacity group-hover/img:opacity-100 hover:bg-black/80" aria-label="Anterior">
+            <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-1.5 text-white opacity-0 transition-opacity group-hover/img:opacity-100 hover:bg-black/80" aria-label={tr.prev}>
               <FiChevronLeft size={16} />
             </button>
-            <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-1.5 text-white opacity-0 transition-opacity group-hover/img:opacity-100 hover:bg-black/80" aria-label="Siguiente">
+            <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/60 p-1.5 text-white opacity-0 transition-opacity group-hover/img:opacity-100 hover:bg-black/80" aria-label={tr.next}>
               <FiChevronRight size={16} />
             </button>
             <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 gap-1">
               {images.map((_, i) => (
-                <button key={i} onClick={(e) => { e.stopPropagation(); setIdx(i) }} className={`h-1.5 rounded-full transition-all ${i === idx ? 'w-4 bg-white' : 'w-1.5 bg-white/40'}`} aria-label={`Captura ${i + 1}`} />
+                <button key={i} onClick={(e) => { e.stopPropagation(); setIdx(i) }} className={`h-1.5 rounded-full transition-all ${i === idx ? 'w-4 bg-white' : 'w-1.5 bg-white/40'}`} aria-label={`${tr.shot} ${i + 1}`} />
               ))}
             </div>
             <span className="absolute right-2 top-2 rounded-full bg-black/60 px-2 py-0.5 text-xs text-white/80">
@@ -140,7 +153,7 @@ function ProjectImage({ project }) {
       </div>
 
       {lightbox !== null && (
-        <Lightbox images={images} startIdx={lightbox} onClose={() => setLightbox(null)} />
+        <Lightbox images={images} startIdx={lightbox} onClose={() => setLightbox(null)} tr={tr} lang={lang} />
       )}
     </>
   )
@@ -155,7 +168,7 @@ function FeaturedCard({ project, index, tr }) {
     <Reveal delay={(index % 2) * 0.1}>
       <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-card transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10">
         <div className="relative aspect-video w-full overflow-hidden bg-surface">
-          <ProjectImage project={project} />
+          <ProjectImage project={project} tr={tr} />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
         </div>
         <div className="flex flex-1 flex-col p-6">
