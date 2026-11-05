@@ -234,7 +234,7 @@ export default function Projects() {
           <h3 className="mb-6 text-center font-display text-xl font-semibold text-slate-300">
             {tr.academicTitle}
           </h3>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             {academic.map((p) => (
               <AcademicCard key={p.title} project={p} tr={tr} />
             ))}

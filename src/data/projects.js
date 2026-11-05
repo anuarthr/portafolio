@@ -3,12 +3,12 @@
 
 export const projects = [
   {
-    title: 'FindMyWorker — Marketplace de Servicios',
-    title_en: 'FindMyWorker — Services Marketplace',
+    title: 'FindMyWorker: Marketplace de Servicios',
+    title_en: 'FindMyWorker: Services Marketplace',
     description:
-      'Marketplace de producción que conecta clientes con trabajadores de oficios del hogar. Motor de recomendación semántico propio (TF-IDF + cosine similarity + PostGIS), chat WebSocket en tiempo real, sistema de escrow de pagos. MRR 0.75 · CTR 42% · búsqueda <50ms · cobertura de tests >85%.',
+      'Marketplace de producción que conecta clientes con trabajadores de oficios del hogar. Motor de recomendación semántico propio (TF-IDF, similitud coseno y PostGIS), chat WebSocket en tiempo real y sistema de escrow de pagos. MRR 0,75 · CTR 42 % · búsqueda en menos de 50 ms · cobertura de pruebas superior al 85 %.',
     description_en:
-      'Production marketplace connecting clients with home service workers. Custom semantic recommendation engine (TF-IDF + cosine similarity + PostGIS), real-time WebSocket chat, and payment escrow system. MRR 0.75 · CTR 42% · search <50ms · test coverage >85%.',
+      'Production marketplace connecting clients with home service workers. Custom semantic recommendation engine (TF-IDF + cosine similarity + PostGIS), real-time WebSocket chat, and payment escrow system. MRR 0.75 · 42% CTR · sub-50 ms search · test coverage >85%.',
     image: '/FindMyWorkerLogo.png',
     images: [],
     tags: ['Python', 'Django', 'React', 'WebSocket', 'PostGIS', 'AWS S3', 'TF-IDF', 'Redis'],
@@ -18,8 +18,8 @@ export const projects = [
     featured: true,
   },
   {
-    title: 'AeroMagdalena — Aerolínea Regional',
-    title_en: 'AeroMagdalena — Regional Airline',
+    title: 'AeroMagdalena: Aerolínea Regional',
+    title_en: 'AeroMagdalena: Regional Airline',
     description:
       'Sistema full stack para una aerolínea regional colombiana. API REST en Spring Boot 3.3 con JWT, autorización por roles, documentación OpenAPI y Docker. SPA en React + TypeScript con arquitectura por dominio, caché con TanStack Query, panel admin y flujo completo de reserva de vuelos.',
     description_en:
@@ -42,8 +42,8 @@ export const projects = [
     featured: true,
   },
   {
-    title: 'SafeHaven — Clínica de Psicología',
-    title_en: 'SafeHaven — Psychology Clinic',
+    title: 'SafeHaven: Clínica de Psicología',
+    title_en: 'SafeHaven: Psychology Clinic',
     description:
       'Sistema full stack de gestión para una clínica de psicología. API REST con Spring Boot 3.3, Spring Security + JWT y PostgreSQL. SPA en React + TypeScript con roles diferenciados (Administrador, Psicólogo, Paciente), agenda de citas, facturación e historial clínico.',
     description_en:
@@ -71,8 +71,38 @@ export const projects = [
 
   // Proyectos académicos / colaborativos
   {
-    title: 'SenseAble — Accesibilidad Visual',
-    title_en: 'SenseAble — Visual Accessibility',
+    title: 'Dígitos Manuscritos: Machine Learning',
+    title_en: 'Handwritten Digits: Machine Learning',
+    description:
+      'Proyecto en equipo de la materia de Inteligencia Artificial. Clasificación de unas 21 600 imágenes de dígitos manuscritos de estilo europeo: manejo de datos con pandas, reducción de dimensionalidad con PCA y comparación de Random Forest, árbol de decisión, regresión logística y MLP con scikit-learn. La mejor exactitud (accuracy) fue del 78,5 %, con MLP.',
+    description_en:
+      'Team project for the Artificial Intelligence course. Classification of about 21,600 European-style handwritten digit images: data handling with pandas, dimensionality reduction with PCA, and a comparison of Random Forest, Decision Tree, Logistic Regression and MLP with scikit-learn. Best accuracy: 78.5%, with MLP.',
+    image: '',
+    images: [],
+    tags: ['Python', 'pandas', 'NumPy', 'scikit-learn', 'PCA', 'Jupyter'],
+    github: 'https://github.com/anuarthr/digits-classification-ML',
+    githubFrontend: '',
+    demo: '',
+    featured: false,
+  },
+  {
+    title: 'Seguridad en APIs: Hacking Ético',
+    title_en: 'API Security: Ethical Hacking',
+    description:
+      'Proyecto individual de la materia de Hacking Ético. Análisis de una API REST deliberadamente vulnerable (FastAPI, PostgreSQL, Docker) según OWASP API Security Top 10 (2023): exploté tres vulnerabilidades, diseñé un nivel nuevo que encadena otras dos y apliqué mitigaciones validadas antes y después con scripts de explotación en Python.',
+    description_en:
+      'Individual project for the Ethical Hacking course. Analysis of a deliberately vulnerable REST API (FastAPI, PostgreSQL, Docker) against the OWASP API Security Top 10 (2023): exploited three vulnerabilities, designed a new level that chains two more, and applied mitigations validated before and after with Python exploit scripts.',
+    image: '',
+    images: [],
+    tags: ['Python', 'FastAPI', 'OWASP API Top 10', 'PostgreSQL', 'Docker'],
+    github: 'https://github.com/anuarthr/api-security-project',
+    githubFrontend: '',
+    demo: '',
+    featured: false,
+  },
+  {
+    title: 'SenseAble: Accesibilidad Visual',
+    title_en: 'SenseAble: Visual Accessibility',
     description:
       'App Android de accesibilidad que convierte texto de imágenes a audio para personas con discapacidad visual. Arquitectura Clean/MVVM con Kotlin, OCR automático con Google ML Kit (cámara) y narración por Text-to-Speech.',
     description_en:
@@ -86,8 +116,8 @@ export const projects = [
     featured: false,
   },
   {
-    title: 'Pokémon Team — DevOps & Full-Stack',
-    title_en: 'Pokémon Team — DevOps & Full-Stack',
+    title: 'Pokémon Team: DevOps & Full-Stack',
+    title_en: 'Pokémon Team: DevOps & Full-Stack',
     description:
       'Proyecto colaborativo de consumo de APIs bajo metodologías ágiles. Gestioné ramas, pull requests y code reviews con Azure DevOps. Implementé consumo de datos externos y manejo de estado en React.',
     description_en:
