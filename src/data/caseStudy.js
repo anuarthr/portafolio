@@ -32,7 +32,7 @@ export const caseStudy = {
     blocks: [
       {
         title: 'El problema',
-        text: 'La lógica del backend estaba repartida entre dos aplicaciones Next.js, y la app Android publicada en Google Play dependía de 43 de sus endpoints. Cualquier cambio en el backend tenía que mantenerlos intactos.',
+        text: 'La lógica del backend estaba repartida entre dos aplicaciones Next.js, y la app Android publicada en Google Play dependía de 43 endpoints de la web. Cualquier cambio en el backend tenía que mantenerlos intactos.',
       },
       {
         title: 'Cómo lo resolví',
@@ -79,7 +79,7 @@ export const caseStudy = {
     blocks: [
       {
         title: 'The problem',
-        text: 'The backend logic was split across two Next.js apps, and the Android app published on Google Play depended on 43 of their endpoints. Any backend change had to keep them intact.',
+        text: 'The backend logic was split across two Next.js apps, and the Android app published on Google Play depended on 43 endpoints from the web app. Any backend change had to keep them intact.',
       },
       {
         title: 'How I solved it',
