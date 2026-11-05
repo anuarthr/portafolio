@@ -1,7 +1,10 @@
 export const site = {
   name: 'Anuarth Rincón',
   initials: 'A.R.',
-  stats: { projects: '5+', technologies: '20+', production: '2' },
+  // productionMonths: Quéjate, mar. 2026 – oct. 2026 (ambos meses incluidos).
+  // production: Quéjate (app en Google Play) y FindMyWorker (demo pública).
+  // El número de proyectos se calcula a partir de projects.js.
+  stats: { productionMonths: '8', production: '2' },
   email: 'anuarthrincongonzalez@gmail.com',
   github: 'https://github.com/anuarthr',
   linkedin: 'https://www.linkedin.com/in/anuarthrincong/',

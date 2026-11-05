@@ -20,7 +20,13 @@ export const t = {
       title: 'Quién soy',
       secondary:
         'Me interesa construir sistemas bien pensados desde el diseño, seguros y respaldados por pruebas. Aprendo rápido, me importa la calidad del código y disfruto trabajar en equipo con criterio técnico. Ahora estoy profundizando en el análisis de datos.',
-      seeking: 'Buscando prácticas para aportar y crecer 🚀',
+      stats: {
+        months: 'Meses de experiencia en producción',
+        production: 'Productos en producción',
+        projects: 'Proyectos en este portafolio',
+      },
+      now: 'Ahora: aprendiendo análisis de datos con',
+      nowTools: 'pandas y scikit-learn',
     },
     experience: {
       kicker: 'Trayectoria',
@@ -82,7 +88,13 @@ export const t = {
       title: 'Who I am',
       secondary:
         'I care about building systems that are well designed, secure and backed by tests. I learn quickly, code quality matters to me, and I enjoy working in a team with technical judgment. I am now going deeper into data analysis.',
-      seeking: 'Looking for an internship to contribute and grow 🚀',
+      stats: {
+        months: 'Months of production experience',
+        production: 'Products in production',
+        projects: 'Projects in this portfolio',
+      },
+      now: 'Now: learning data analysis with',
+      nowTools: 'pandas and scikit-learn',
     },
     experience: {
       kicker: 'Career',

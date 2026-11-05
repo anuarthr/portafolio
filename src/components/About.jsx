@@ -1,7 +1,8 @@
-import { FiFolder, FiCpu, FiZap } from 'react-icons/fi'
+import { FiFolder, FiCalendar, FiZap } from 'react-icons/fi'
 import Reveal from './Reveal'
 import SectionTitle from './SectionTitle'
 import { site } from '../data/site'
+import { projects } from '../data/projects'
 import { useLang } from '../context/LangContext'
 import { t } from '../i18n/translations'
 
@@ -11,9 +12,9 @@ export default function About() {
   const data = site[lang]
 
   const stats = [
-    { icon: FiFolder, label: lang === 'es' ? 'Proyectos construidos' : 'Projects built', value: site.stats.projects },
-    { icon: FiCpu, label: lang === 'es' ? 'Tecnologías dominadas' : 'Technologies mastered', value: site.stats.technologies },
-    { icon: FiZap, label: lang === 'es' ? 'Apps en producción' : 'Apps in production', value: site.stats.production },
+    { icon: FiCalendar, label: tr.stats.months, value: site.stats.productionMonths },
+    { icon: FiZap, label: tr.stats.production, value: site.stats.production },
+    { icon: FiFolder, label: tr.stats.projects, value: String(projects.length) },
   ]
 
   return (
@@ -41,7 +42,7 @@ export default function About() {
           <Reveal delay={0.3}>
             <div className="glass flex h-full items-center justify-center rounded-2xl bg-gradient-to-br from-accent/20 to-transparent p-6 text-center">
               <p className="font-display text-sm font-semibold text-white">
-                {tr.seeking}
+                {tr.now} <span className="whitespace-nowrap">{tr.nowTools}</span>
               </p>
             </div>
           </Reveal>
