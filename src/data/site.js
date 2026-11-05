@@ -11,26 +11,26 @@ export const site = {
   es: {
     roles: [
       'Estudiante de Ingeniería de Sistemas',
-      'Full Stack Developer',
-      'Desarrollador Móvil',
-      'Buscando prácticas profesionales',
+      'Desarrollador Full-Stack',
+      'Desarrollador Backend',
+      'Aprendiendo análisis de datos',
     ],
     intro:
-      'Construyo aplicaciones web y móviles de extremo a extremo, desde APIs hasta apps nativas en producción. Busco prácticas profesionales donde aportar desde el primer día.',
+      'Construyo backends y aplicaciones web y móviles en producción, con foco en APIs seguras y pruebas automatizadas.',
     about:
-      'Soy estudiante de Ingeniería de Sistemas con experiencia práctica en desarrollo full stack y móvil. Trabajé como desarrollador en Quéjate (quejate.com.co), plataforma ciudadana colombiana en producción activa, construyendo endpoints REST con Next.js 15 y la app Android con React Native + Expo. He diseñado y desplegado proyectos propios con Spring Boot, Django, React y TypeScript. Me interesa escribir código limpio, tomar decisiones de diseño razonadas y resolver problemas reales.',
+      'Soy estudiante de Ingeniería de Sistemas en la Universidad del Magdalena y desarrollador full-stack con experiencia en producción. En Quéjate, una plataforma colombiana para radicar PQRSD ante entidades públicas, migré el backend a NestJS y publiqué la app Android en Google Play. Trabajo con TypeScript, Node.js, React, Python y SQL, con foco en APIs seguras y pruebas automatizadas.',
   },
 
   en: {
     roles: [
       'Systems Engineering Student',
-      'Full Stack Developer',
-      'Mobile Developer',
-      'Looking for internships',
+      'Full-Stack Developer',
+      'Backend Developer',
+      'Learning data analysis',
     ],
     intro:
-      'I build web and mobile applications end-to-end, from APIs to native apps in production. Looking for an internship where I can contribute from day one.',
+      'I build backends and web and mobile apps in production, focused on secure APIs and automated testing.',
     about:
-      'I am a Systems Engineering student with practical experience in full stack and mobile development. I worked as a developer at Quéjate (quejate.com.co), an active Colombian civic platform in production, building REST endpoints with Next.js 15 and the Android app with React Native + Expo. I have designed and deployed personal projects with Spring Boot, Django, React, and TypeScript. I care about writing clean code, making sound design decisions, and solving real problems.',
+      'I am a Systems Engineering student at Universidad del Magdalena and a full-stack developer with production experience. At Quéjate, a Colombian civic-tech platform for filing complaints with public entities, I migrated the backend to NestJS and shipped the Android app on Google Play. I work with TypeScript, Node.js, React, Python and SQL, focused on secure APIs and automated testing.',
   },
 }

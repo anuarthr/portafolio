@@ -52,7 +52,7 @@ export default function Hero() {
             {tr.greeting} <span className="text-accent-light">{site.name}</span>
           </h1>
 
-          <p className="mt-4 h-8 text-xl font-medium text-slate-300 sm:text-2xl">
+          <p className="mt-4 h-14 text-xl font-medium text-slate-300 sm:h-8 sm:text-2xl">
             <Typewriter words={data.roles} />
           </p>
 

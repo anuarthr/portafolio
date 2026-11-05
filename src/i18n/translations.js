@@ -10,7 +10,7 @@ export const t = {
     },
     hero: {
       greeting: 'Hola, soy',
-      badge: 'Disponible para prácticas',
+      badge: 'Disponible para nuevas oportunidades',
       viewProjects: 'Ver proyectos',
       contactMe: 'Contactarme',
       stack: 'Stack',
@@ -19,7 +19,7 @@ export const t = {
       kicker: 'Sobre mí',
       title: 'Quién soy',
       secondary:
-        'Me interesa especialmente construir sistemas que escalen y que estén bien pensados desde el diseño. Aprendo rápido, me importa la calidad del código y disfruto trabajar en equipo con criterio técnico. Actualmente en proceso de prácticas profesionales.',
+        'Me interesa construir sistemas bien pensados desde el diseño, seguros y respaldados por pruebas. Aprendo rápido, me importa la calidad del código y disfruto trabajar en equipo con criterio técnico. Ahora estoy profundizando en el análisis de datos.',
       seeking: 'Buscando prácticas para aportar y crecer 🚀',
     },
     experience: {
@@ -72,7 +72,7 @@ export const t = {
     },
     hero: {
       greeting: 'Hi, I\'m',
-      badge: 'Available for internships',
+      badge: 'Open to new opportunities',
       viewProjects: 'View projects',
       contactMe: 'Contact me',
       stack: 'Stack',
@@ -81,7 +81,7 @@ export const t = {
       kicker: 'About me',
       title: 'Who I am',
       secondary:
-        'I am especially interested in building systems that scale and are well-thought-out from the design stage. I learn quickly, code quality matters to me, and I enjoy working in a team with technical judgment. Currently completing my professional internship.',
+        'I care about building systems that are well designed, secure and backed by tests. I learn quickly, code quality matters to me, and I enjoy working in a team with technical judgment. I am now going deeper into data analysis.',
       seeking: 'Looking for an internship to contribute and grow 🚀',
     },
     experience: {
