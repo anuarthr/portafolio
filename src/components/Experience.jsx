@@ -30,7 +30,7 @@ function ExperienceCard({ exp, index }) {
             <div>
               <h3 className="text-lg font-bold text-white">{role}</h3>
               <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span className="text-sm font-medium text-accent-light">{name}</span>
+                <span className="text-sm font-medium text-slate-300">{name}</span>
                 {exp.app && (
                   <>
                     <span className="text-slate-500">·</span>
