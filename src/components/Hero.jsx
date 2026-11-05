@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { FiArrowRight, FiMail } from 'react-icons/fi'
 import {
   SiReact, SiTypescript, SiSpring, SiDjango,
-  SiPostgresql, SiNextdotjs, SiExpo,
+  SiPostgresql, SiNextdotjs, SiExpo, SiNestjs,
 } from 'react-icons/si'
 import { FaJava, FaAws } from 'react-icons/fa6'
 import Typewriter from './Typewriter'
@@ -13,6 +13,7 @@ import { t } from '../i18n/translations'
 const stack = [
   { name: 'React', icon: SiReact },
   { name: 'TypeScript', icon: SiTypescript },
+  { name: 'NestJS', icon: SiNestjs },
   { name: 'Spring Boot', icon: SiSpring },
   { name: 'Django', icon: SiDjango },
   { name: 'Java', icon: FaJava },

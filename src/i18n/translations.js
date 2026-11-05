@@ -45,10 +45,6 @@ export const t = {
     skills: {
       kicker: 'Stack',
       title: 'Skills & Tecnologías',
-      categories: {
-        'Base de datos': 'Base de datos',
-        Seguridad: 'Seguridad',
-      },
     },
     contact: {
       kicker: 'Contacto',
@@ -113,10 +109,6 @@ export const t = {
     skills: {
       kicker: 'Stack',
       title: 'Skills & Technologies',
-      categories: {
-        'Base de datos': 'Databases',
-        Seguridad: 'Security',
-      },
     },
     contact: {
       kicker: 'Contact',
