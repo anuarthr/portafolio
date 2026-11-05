@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FiGithub, FiLinkedin, FiMail, FiSend, FiInstagram, FiLoader } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail, FiSend, FiLoader } from 'react-icons/fi'
 import Reveal from './Reveal'
 import SectionTitle from './SectionTitle'
 import { site } from '../data/site'
@@ -11,7 +11,6 @@ const FORMSPREE_URL = 'https://formspree.io/f/mbdedlnr'
 const socials = [
   { icon: FiGithub, href: site.github, label: 'GitHub', color: 'hover:text-white' },
   { icon: FiLinkedin, href: site.linkedin, label: 'LinkedIn', color: 'hover:text-[#0a66c2]' },
-  { icon: FiInstagram, href: site.instagram, label: 'Instagram', color: 'hover:text-[#e1306c]' },
   { icon: FiMail, href: `mailto:${site.email}`, label: 'Email', color: 'hover:text-accent-light' },
 ]
 

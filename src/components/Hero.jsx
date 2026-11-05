@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { FiArrowRight, FiMail } from 'react-icons/fi'
 import {
   SiReact, SiTypescript, SiSpring, SiDjango,
-  SiPostgresql, SiNextdotjs, SiExpo,
+  SiPostgresql, SiNextdotjs, SiExpo, SiNestjs,
 } from 'react-icons/si'
 import { FaJava, FaAws } from 'react-icons/fa6'
 import Typewriter from './Typewriter'
@@ -13,6 +13,7 @@ import { t } from '../i18n/translations'
 const stack = [
   { name: 'React', icon: SiReact },
   { name: 'TypeScript', icon: SiTypescript },
+  { name: 'NestJS', icon: SiNestjs },
   { name: 'Spring Boot', icon: SiSpring },
   { name: 'Django', icon: SiDjango },
   { name: 'Java', icon: FaJava },
@@ -52,7 +53,7 @@ export default function Hero() {
             {tr.greeting} <span className="text-accent-light">{site.name}</span>
           </h1>
 
-          <p className="mt-4 h-8 text-xl font-medium text-slate-300 sm:text-2xl">
+          <p className="mt-4 h-14 text-xl font-medium text-slate-300 sm:h-8 sm:text-2xl">
             <Typewriter words={data.roles} />
           </p>
 
@@ -108,8 +109,12 @@ export default function Hero() {
             />
             <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-base sm:h-72 sm:w-72">
               <img
-                src="/Fotoperfilpp.PNG"
-                alt={site.name}
+                src="/foto-perfil-576.webp"
+                alt={tr.photoAlt}
+                width={576}
+                height={576}
+                fetchpriority="high"
+                decoding="async"
                 className="h-full w-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'

@@ -10,17 +10,24 @@ export const t = {
     },
     hero: {
       greeting: 'Hola, soy',
-      badge: 'Disponible para prácticas',
+      badge: 'Disponible para nuevas oportunidades',
       viewProjects: 'Ver proyectos',
       contactMe: 'Contactarme',
       stack: 'Stack',
+      photoAlt: 'Foto de perfil de Anuarth Rincón',
     },
     about: {
       kicker: 'Sobre mí',
       title: 'Quién soy',
       secondary:
-        'Me interesa especialmente construir sistemas que escalen y que estén bien pensados desde el diseño. Aprendo rápido, me importa la calidad del código y disfruto trabajar en equipo con criterio técnico. Actualmente en proceso de prácticas profesionales.',
-      seeking: 'Buscando prácticas para aportar y crecer 🚀',
+        'Me interesa construir sistemas bien pensados desde el diseño, seguros y respaldados por pruebas. Aprendo rápido, me importa la calidad del código y disfruto trabajar en equipo con criterio técnico. Ahora estoy profundizando en el análisis de datos.',
+      stats: {
+        months: 'Meses de experiencia en producción',
+        production: 'Productos en producción',
+        projects: 'Proyectos en este portafolio',
+      },
+      now: 'Ahora: aprendiendo análisis de datos con',
+      nowTools: 'pandas y scikit-learn',
     },
     experience: {
       kicker: 'Trayectoria',
@@ -35,14 +42,16 @@ export const t = {
       frontend: 'Frontend',
       viewCode: 'Ver código',
       viewDemo: 'Ver demo',
+      enlarge: 'ampliar',
+      enlargeLabel: 'Ampliar imagen',
+      close: 'Cerrar',
+      prev: 'Anterior',
+      next: 'Siguiente',
+      shot: 'Captura',
     },
     skills: {
       kicker: 'Stack',
       title: 'Skills & Tecnologías',
-      categories: {
-        'Base de datos': 'Base de datos',
-        Seguridad: 'Seguridad',
-      },
     },
     contact: {
       kicker: 'Contacto',
@@ -72,17 +81,24 @@ export const t = {
     },
     hero: {
       greeting: 'Hi, I\'m',
-      badge: 'Available for internships',
+      badge: 'Open to new opportunities',
       viewProjects: 'View projects',
       contactMe: 'Contact me',
       stack: 'Stack',
+      photoAlt: 'Profile photo of Anuarth Rincón',
     },
     about: {
       kicker: 'About me',
       title: 'Who I am',
       secondary:
-        'I am especially interested in building systems that scale and are well-thought-out from the design stage. I learn quickly, code quality matters to me, and I enjoy working in a team with technical judgment. Currently completing my professional internship.',
-      seeking: 'Looking for an internship to contribute and grow 🚀',
+        'I care about building systems that are well designed, secure and backed by tests. I learn quickly, code quality matters to me, and I enjoy working in a team with technical judgment. I am now going deeper into data analysis.',
+      stats: {
+        months: 'Months of production experience',
+        production: 'Products in production',
+        projects: 'Projects in this portfolio',
+      },
+      now: 'Now: learning data analysis with',
+      nowTools: 'pandas and scikit-learn',
     },
     experience: {
       kicker: 'Career',
@@ -97,14 +113,16 @@ export const t = {
       frontend: 'Frontend',
       viewCode: 'View code',
       viewDemo: 'Live demo',
+      enlarge: 'enlarge',
+      enlargeLabel: 'Enlarge image',
+      close: 'Close',
+      prev: 'Previous',
+      next: 'Next',
+      shot: 'Screenshot',
     },
     skills: {
       kicker: 'Stack',
       title: 'Skills & Technologies',
-      categories: {
-        'Base de datos': 'Databases',
-        Seguridad: 'Security',
-      },
     },
     contact: {
       kicker: 'Contact',
